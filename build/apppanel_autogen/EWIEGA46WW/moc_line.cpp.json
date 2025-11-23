@@ -1,0 +1,348 @@
+{
+    "classes": [
+        {
+            "className": "Line",
+            "enums": [
+                {
+                    "isClass": false,
+                    "isFlag": false,
+                    "name": "Mode",
+                    "values": [
+                        "Constant",
+                        "NonConstant",
+                        "NotUsed"
+                    ]
+                },
+                {
+                    "isClass": false,
+                    "isFlag": false,
+                    "name": "Status",
+                    "values": [
+                        "OK",
+                        "Failure",
+                        "Test"
+                    ]
+                },
+                {
+                    "isClass": false,
+                    "isFlag": false,
+                    "name": "LineState",
+                    "values": [
+                        "Off",
+                        "On"
+                    ]
+                }
+            ],
+            "object": true,
+            "properties": [
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 0,
+                    "name": "description",
+                    "notify": "descriptionChanged",
+                    "read": "description",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "QString",
+                    "user": false,
+                    "write": "setDescription"
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 1,
+                    "name": "mpower",
+                    "notify": "mpowerChanged",
+                    "read": "mpower",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "double",
+                    "user": false,
+                    "write": "setmPower"
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 2,
+                    "name": "power",
+                    "notify": "powerChanged",
+                    "read": "power",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "double",
+                    "user": false,
+                    "write": "setPower"
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 3,
+                    "name": "current",
+                    "notify": "currentChanged",
+                    "read": "current",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "double",
+                    "user": false,
+                    "write": "setCurrent"
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 4,
+                    "name": "voltage",
+                    "notify": "voltageChanged",
+                    "read": "voltage",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "double",
+                    "user": false,
+                    "write": "setVoltage"
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 5,
+                    "name": "tolerance",
+                    "notify": "toleranceChanged",
+                    "read": "tolerance",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "double",
+                    "user": false,
+                    "write": "setTolerance"
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 6,
+                    "name": "mode",
+                    "notify": "modeChanged",
+                    "read": "mode",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "Mode",
+                    "user": false,
+                    "write": "setMode"
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 7,
+                    "name": "status",
+                    "notify": "statusChanged",
+                    "read": "status",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "Status",
+                    "user": false,
+                    "write": "setStatus"
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 8,
+                    "name": "lineState",
+                    "notify": "lineStateChanged",
+                    "read": "lineState",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "LineState",
+                    "user": false,
+                    "write": "setLineState"
+                }
+            ],
+            "qualifiedClassName": "Line",
+            "signals": [
+                {
+                    "access": "public",
+                    "name": "descriptionChanged",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "name": "powerChanged",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "name": "mpowerChanged",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "name": "currentChanged",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "name": "voltageChanged",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "name": "toleranceChanged",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "name": "modeChanged",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "name": "statusChanged",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "name": "lineStateChanged",
+                    "returnType": "void"
+                }
+            ],
+            "slots": [
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "desc",
+                            "type": "QString"
+                        }
+                    ],
+                    "name": "setDescription",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "p",
+                            "type": "double"
+                        }
+                    ],
+                    "name": "setPower",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "p",
+                            "type": "double"
+                        }
+                    ],
+                    "name": "setmPower",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "p",
+                            "type": "double"
+                        }
+                    ],
+                    "name": "setCurrent",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "p",
+                            "type": "double"
+                        }
+                    ],
+                    "name": "setVoltage",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "t",
+                            "type": "double"
+                        }
+                    ],
+                    "name": "setTolerance",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "m",
+                            "type": "Mode"
+                        }
+                    ],
+                    "name": "setMode",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "s",
+                            "type": "Status"
+                        }
+                    ],
+                    "name": "setStatus",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "st",
+                            "type": "LineState"
+                        }
+                    ],
+                    "name": "setLineState",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "name": "statusString",
+                    "returnType": "QString"
+                },
+                {
+                    "access": "public",
+                    "name": "statusColor",
+                    "returnType": "QColor"
+                },
+                {
+                    "access": "public",
+                    "name": "lineStateString",
+                    "returnType": "QString"
+                }
+            ],
+            "superClasses": [
+                {
+                    "access": "public",
+                    "name": "QObject"
+                }
+            ]
+        }
+    ],
+    "inputFile": "line.h",
+    "outputRevision": 68
+}

@@ -1,6 +1,8 @@
 #include <QGuiApplication>
+#include <QQuickStyle>
 #include <QQmlApplicationEngine>
 #include <QQmlContext>
+#include <QFont>
 #include "PasswordManager.h"
 #include "ValueProvider.h"
 #include "TimeAjst.h"
@@ -14,7 +16,15 @@ extern void log(const QString &msg);
 
 int main(int argc, char *argv[])
 {
+    // 1. Отключаем HighDPI, чтобы 1 px был 1 реальным пикселем
+    QCoreApplication::setAttribute(Qt::AA_DisableHighDpiScaling);
+
     QGuiApplication app(argc, argv);
+    QQuickStyle::setStyle("Fusion"); // или "Material", "Imagine" и т.д.
+    // 2. Задаём один и тот же шрифт и базовый размер для всего приложения
+    QFont font("DejaVu Sans");        // выбери шрифт, который точно есть и на Ubuntu, и на панели
+    font.setPixelSize(30);            // базовый размер
+    app.setFont(font);
 
     qmlRegisterType<TimeAjst>("App", 1, 0, "TimeAjst");
     qmlRegisterType<Line>("App", 1, 0, "Line");

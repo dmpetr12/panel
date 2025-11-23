@@ -1,0 +1,6 @@
+<RCC>
+  <qresource prefix="/panel">
+    <file alias="qmldir">/home/peter/Qt_work/panel/build/panel/qmldir</file>
+  </qresource>
+</RCC>
+

@@ -100,5 +100,10 @@ Window {
         height : 650
 
         initialItem: "pageStart.qml"
+        // для всех операций используем один fade
+        pushEnter: Transition { NumberAnimation { properties: "opacity"; from: 0; to: 1; duration: 150 } }
+        pushExit:  Transition { NumberAnimation { properties: "opacity"; from: 1; to: 0; duration: 150 } }
+        popEnter:  Transition { NumberAnimation { properties: "opacity"; from: 0; to: 1; duration: 150 } }
+        popExit:   Transition { NumberAnimation { properties: "opacity"; from: 1; to: 0; duration: 150 } }
     }
 }

@@ -5,7 +5,13 @@ project(panel VERSION 0.1 LANGUAGES CXX)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-find_package(Qt6 6.4 REQUIRED COMPONENTS Quick)
+find_package(Qt6 6.4 REQUIRED COMPONENTS
+    Core
+    Gui
+    Qml
+    Quick
+    QuickControls2
+)
 
 qt_standard_project_setup()
 
@@ -27,7 +33,7 @@ qt_add_qml_module(apppanel
         pageAjaste.qml pageAjasteSystem.qml pageAjasteTime.qml
         pageInfo.qml pageLineEdit.qml pagePass.qml pagePassCh.qml
         pagereserv.qml pageStart.qml pageTest.qml pageTestEx.qml password.qml
-        TestSettingsPage.qml SchedulePage.qml
+        TestSettingsPage.qml SchedulePage.qml OperatorKeyboard.qml
         RESOURCES Back.png
         RESOURCES logo.png
 )
@@ -44,8 +50,12 @@ set_target_properties(apppanel PROPERTIES
     WIN32_EXECUTABLE TRUE
 )
 
-target_link_libraries(apppanel
-    PRIVATE Qt6::Quick
+target_link_libraries(apppanel PRIVATE
+    Qt6::Core
+    Qt6::Gui
+    Qt6::Qml
+    Qt6::Quick
+    Qt6::QuickControls2
 )
 
 include(GNUInstallDirs)

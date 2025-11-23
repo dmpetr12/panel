@@ -1,0 +1,15 @@
+-rootPath
+/home/peter/Qt_work/panel
+-cmake-output
+-output-file
+/home/peter/Qt_work/panel/build/.qt_plugins/Qt6_QmlPlugins_Imports_apppanel.cmake
+-importPath
+/home/peter/Qt_work/panel/build/panel
+-importPath
+/home/peter/Qt_work/panel/build
+-importPath
+/usr/lib/x86_64-linux-gnu/qt6/qml
+-qrcFiles
+/home/peter/Qt_work/panel/build/.rcc/qmake_panel.qrc
+/home/peter/Qt_work/panel/build/.rcc/qmake_panel_copy.qrc
+/home/peter/Qt_work/panel/build/.rcc/apppanel_raw_qml_0.qrc
