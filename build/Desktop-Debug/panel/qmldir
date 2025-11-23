@@ -1,0 +1,7 @@
+module panel
+typeinfo apppanel.qmltypes
+prefer :/
+LineItem 1.0 LineItem.qml
+TestSettingsPage 1.0 TestSettingsPage.qml
+SchedulePage 1.0 SchedulePage.qml
+

@@ -1,0 +1,190 @@
+🧩 Вариант 1. Ubuntu Desktop (X11): управление экраном через xset
+
+Самый простой вариант, если у тебя стоит Ubuntu с GUI.
+В этом случае Qt работает поверх X11, и ты можешь управлять питанием дисплея так же, как на обычном ПК.
+
+🔧 Пример управления экраном из Qt
+#include <QProcess>
+#include <QTimer>
+#include <QGuiApplication>
+#include <QEvent>
+#include <QObject>
+
+class ScreenController : public QObject {
+    Q_OBJECT
+public:
+    ScreenController(QObject *parent = nullptr) : QObject(parent) {
+        connect(&timer, &QTimer::timeout, this, &ScreenController::turnOffScreen);
+        timer.start(60000); // 1 минута бездействия
+    }
+
+    bool eventFilter(QObject*, QEvent *event) override {
+        if (event->type() == QEvent::MouseButtonPress ||
+            event->type() == QEvent::TouchBegin ||
+            event->type() == QEvent::KeyPress) {
+            timer.start(60000);
+            if (screenOff)
+                turnOnScreen();
+        }
+        return false;
+    }
+
+private:
+    QTimer timer;
+    bool screenOff = false;
+
+    void turnOffScreen() {
+        screenOff = true;
+        QProcess::execute("xset dpms force off");
+    }
+
+    void turnOnScreen() {
+        screenOff = false;
+        QProcess::execute("xset dpms force on");
+    }
+};
+
+// В main.cpp
+// qApp->installEventFilter(new ScreenController());
+
+
+💡 Для этого должны быть установлены пакеты:
+
+sudo apt install x11-xserver-utils
+
+🧩 Вариант 2. Wayland (Weston / GNOME Shell)
+
+Если ты используешь Wayland, команды xset и xrandr не работают.
+Тогда есть два варианта:
+
+🔹 Через DBus-интерфейс PowerManager
+gdbus call --session \
+    --dest org.gnome.SettingsDaemon.Power \
+    --object-path /org/gnome/SettingsDaemon/Power \
+    --method org.gnome.SettingsDaemon.Power.Screen.SetBrightness 0
+
+
+В Qt ты можешь вызвать то же самое:
+
+QProcess::execute("gdbus call --session --dest org.gnome.SettingsDaemon.Power "
+                  "--object-path /org/gnome/SettingsDaemon/Power "
+                  "--method org.gnome.SettingsDaemon.Power.Screen.SetBrightness 0");
+
+🔹 Или через Qt API (если используешь Qt 6.5+)
+
+Qt поддерживает модуль QtPower (экспериментальный), который позволяет гасить экран, переходить в sleep и т.д.
+Однако для Ubuntu 22.04 он часто собирается отдельно.
+
+🧩 Вариант 3. Embedded режим (DirectFB / DRM / framebuffer)
+
+Если Ubuntu у тебя без десктопа (headless, с автозапуском твоего Qt-приложения на /dev/fb0 или через EGLFS), то X11 и Wayland отсутствуют.
+В этом случае экран можно управлять через системный интерфейс:
+
+🔹 1. Через sysfs
+
+Посмотри, какой интерфейс у тебя для подсветки:
+
+ls /sys/class/backlight/
+
+
+например:
+
+backlight_pwm
+
+
+Тогда можешь регулировать яркость:
+
+echo 0 > /sys/class/backlight/backlight_pwm/brightness   # выключить
+echo 255 > /sys/class/backlight/backlight_pwm/brightness # включить
+
+
+Из Qt:
+
+#include <QFile>
+
+void setBacklight(int value) {
+    QFile f("/sys/class/backlight/backlight_pwm/brightness");
+    if (f.open(QIODevice::WriteOnly)) {
+        f.write(QByteArray::number(value));
+    }
+}
+
+⚙️ Вариант 4. Управление HDMI-видео (RK дисплейный стек)
+
+Для RK3568 поддерживается команда drm_mode, которая позволяет полностью отключать вывод HDMI / LVDS / MIPI.
+
+Например:
+
+echo off > /sys/class/drm/card0-HDMI-A-1/status
+echo on > /sys/class/drm/card0-HDMI-A-1/status
+
+
+или через drm_info / modetest из пакета libdrm-tests.
+
+💡 Рекомендуемая схема для твоего случая
+
+Поскольку ты работаешь с панелью на RK3568 под Ubuntu 22.04, лучше всего:
+
+Проверить, что Qt использует EGLFS или Wayland:
+
+echo $QT_QPA_PLATFORM
+
+
+(или запустить с QT_QPA_PLATFORM=eglfs ./your_app).
+
+Если EGLFS → используешь /sys/class/backlight/... для управления подсветкой.
+
+Если X11/Wayland → используешь xset или gdbus.
+
+Можно комбинировать: затемнение через QML, а реальное выключение подсветки — через C++ и sysfs.
+
+⚙️ Пример QML + C++ гибрид
+
+Ты можешь сделать универсальный контроллер:
+
+// screencontrol.h
+class ScreenControl : public QObject {
+    Q_OBJECT
+public slots:
+    void setBrightness(int value) {
+        QFile f("/sys/class/backlight/backlight_pwm/brightness");
+        if (f.open(QIODevice::WriteOnly))
+            f.write(QByteArray::number(value));
+    }
+
+    void turnOff() { setBrightness(0); }
+    void turnOn()  { setBrightness(255); }
+};
+
+// screensaver.qml
+Rectangle {
+    id: saver
+    anchors.fill: parent
+    color: "black"
+    visible: false
+
+    Timer {
+        id: t
+        interval: 60000
+        repeat: false
+        onTriggered: {
+            saver.visible = true
+            screenControl.turnOff()
+        }
+    }
+
+    MouseArea {
+        anchors.fill: parent
+        onClicked: {
+            saver.visible = false
+            screenControl.turnOn()
+            t.restart()
+        }
+    }
+}
+
+
+Хочешь, я покажу конкретный пример под EGLFS (без X11) — с автозапуском Qt-приложения при старте Ubuntu и автоматическим гашением подсветки дисплея через /sys/class/backlight?
+Это типовой вариант для шкафов и встраиваемых панелей на RK3568.
+
+Cha

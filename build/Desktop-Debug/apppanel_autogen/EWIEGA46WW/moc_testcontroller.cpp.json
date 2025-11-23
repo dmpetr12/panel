@@ -1,0 +1,45 @@
+{
+    "classes": [
+        {
+            "className": "TestController",
+            "methods": [
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "lineIndex",
+                            "type": "int"
+                        },
+                        {
+                            "name": "minutes",
+                            "type": "int"
+                        }
+                    ],
+                    "name": "startTest",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "lineIndex",
+                            "type": "int"
+                        }
+                    ],
+                    "name": "stopTest",
+                    "returnType": "void"
+                }
+            ],
+            "object": true,
+            "qualifiedClassName": "TestController",
+            "superClasses": [
+                {
+                    "access": "public",
+                    "name": "QObject"
+                }
+            ]
+        }
+    ],
+    "inputFile": "testcontroller.h",
+    "outputRevision": 68
+}

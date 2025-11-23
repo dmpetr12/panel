@@ -1,0 +1,20 @@
+[
+    {
+        "enabled": true,
+        "period": "один раз",
+        "startDate": "2025-06-15",
+        "startTime": "00:00",
+        "testType": "Функциональный",
+        "weekDays": [
+        ]
+    },
+    {
+        "enabled": true,
+        "period": "ежедневно",
+        "startDate": "2025-06-15",
+        "startTime": "00:00",
+        "testType": "Функциональный",
+        "weekDays": [
+        ]
+    }
+]

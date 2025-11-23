@@ -1,0 +1,20 @@
+<RCC>
+    <qresource prefix="/">
+        <file>logo.png</file>
+        <file>main.qml</file>
+        <file>pageAjaste.qml</file>
+        <file>pagereserv.qml</file>
+        <file>pagePass.qml</file>
+        <file>pageStart.qml</file>
+        <file>Back.png</file>
+        <file>pageInfo.qml</file>
+        <file>pageAjasteTime.qml</file>
+        <file>pageLineEdit.qml</file>
+        <file>pagePassCh.qml</file>
+        <file>pageTest.qml</file>
+        <file>pageTestEx.qml</file>
+        <file>SchedulePage.qml</file>
+        <file>TestSettingsPage.qml</file>
+        <file>pageAjasteSystem.qml</file>
+    </qresource>
+</RCC>

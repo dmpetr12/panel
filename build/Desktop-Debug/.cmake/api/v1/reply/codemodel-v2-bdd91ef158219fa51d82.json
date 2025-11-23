@@ -1,0 +1,169 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-.-Debug-bc2c4fda338433b4f636.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.16"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7,
+						8,
+						9,
+						10,
+						11,
+						12
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "panel",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7,
+						8,
+						9,
+						10,
+						11,
+						12
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "all_qmllint::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-all_qmllint-Debug-fd20fae4725725762292.json",
+					"name" : "all_qmllint",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "all_qmllint_json::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-all_qmllint_json-Debug-f7025d46fe9e6b49857b.json",
+					"name" : "all_qmllint_json",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "all_qmltyperegistrations::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-all_qmltyperegistrations-Debug-90d0c377d628cca90891.json",
+					"name" : "all_qmltyperegistrations",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "apppanel::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-apppanel-Debug-d5abf43af96956190d8c.json",
+					"name" : "apppanel",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "apppanel_autogen::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-apppanel_autogen-Debug-d97bfdd348bf0d9130fe.json",
+					"name" : "apppanel_autogen",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "apppanel_autogen_timestamp_deps::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-apppanel_autogen_timestamp_deps-Debug-c79d9b97b89ff56ac0ab.json",
+					"name" : "apppanel_autogen_timestamp_deps",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "apppanel_automoc_json_extraction::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-apppanel_automoc_json_extraction-Debug-71a07e031832493c6c0e.json",
+					"name" : "apppanel_automoc_json_extraction",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "apppanel_other_files::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-apppanel_other_files-Debug-46ee227dec85d63c52c0.json",
+					"name" : "apppanel_other_files",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "apppanel_qmlimportscan::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-apppanel_qmlimportscan-Debug-9ff51c718eb2301e37eb.json",
+					"name" : "apppanel_qmlimportscan",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "apppanel_qmllint::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-apppanel_qmllint-Debug-35ac0ea6cdca022793c9.json",
+					"name" : "apppanel_qmllint",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "apppanel_qmllint_json::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-apppanel_qmllint_json-Debug-adde5b77cf4c53debc00.json",
+					"name" : "apppanel_qmllint_json",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "apppanel_qmltyperegistration::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-apppanel_qmltyperegistration-Debug-ac79498588d0afdd0d59.json",
+					"name" : "apppanel_qmltyperegistration",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "apppanel_tooling::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-apppanel_tooling-Debug-b654a159eccd1ccc6020.json",
+					"name" : "apppanel_tooling",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/home/peter/Qt_work/panel/build/Desktop-Debug",
+		"source" : "/home/peter/Qt_work/panel"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 6
+	}
+}

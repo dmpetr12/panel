@@ -1,0 +1,23 @@
+<RCC>
+  <qresource prefix="/">
+    <file alias="main.qml">/home/peter/Qt_work/panel/main.qml</file>
+    <file alias="LineItem.qml">/home/peter/Qt_work/panel/LineItem.qml</file>
+    <file alias="pageAjaste.qml">/home/peter/Qt_work/panel/pageAjaste.qml</file>
+    <file alias="pageAjasteSystem.qml">/home/peter/Qt_work/panel/pageAjasteSystem.qml</file>
+    <file alias="pageAjasteTime.qml">/home/peter/Qt_work/panel/pageAjasteTime.qml</file>
+    <file alias="pageInfo.qml">/home/peter/Qt_work/panel/pageInfo.qml</file>
+    <file alias="pageLineEdit.qml">/home/peter/Qt_work/panel/pageLineEdit.qml</file>
+    <file alias="pagePass.qml">/home/peter/Qt_work/panel/pagePass.qml</file>
+    <file alias="pagePassCh.qml">/home/peter/Qt_work/panel/pagePassCh.qml</file>
+    <file alias="pagereserv.qml">/home/peter/Qt_work/panel/pagereserv.qml</file>
+    <file alias="pageStart.qml">/home/peter/Qt_work/panel/pageStart.qml</file>
+    <file alias="pageTest.qml">/home/peter/Qt_work/panel/pageTest.qml</file>
+    <file alias="pageTestEx.qml">/home/peter/Qt_work/panel/pageTestEx.qml</file>
+    <file alias="password.qml">/home/peter/Qt_work/panel/password.qml</file>
+    <file alias="TestSettingsPage.qml">/home/peter/Qt_work/panel/TestSettingsPage.qml</file>
+    <file alias="SchedulePage.qml">/home/peter/Qt_work/panel/SchedulePage.qml</file>
+    <file alias="Back.png">/home/peter/Qt_work/panel/Back.png</file>
+    <file alias="logo.png">/home/peter/Qt_work/panel/logo.png</file>
+  </qresource>
+</RCC>
+

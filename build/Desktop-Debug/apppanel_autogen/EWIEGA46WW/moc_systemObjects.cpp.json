@@ -1,0 +1,182 @@
+{
+    "classes": [
+        {
+            "className": "Network",
+            "enums": [
+                {
+                    "isClass": false,
+                    "isFlag": false,
+                    "name": "Status",
+                    "values": [
+                        "Ok",
+                        "Failure"
+                    ]
+                }
+            ],
+            "methods": [
+                {
+                    "access": "public",
+                    "name": "statusString",
+                    "returnType": "QString"
+                },
+                {
+                    "access": "public",
+                    "name": "statusColor",
+                    "returnType": "QColor"
+                }
+            ],
+            "object": true,
+            "properties": [
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 0,
+                    "name": "status",
+                    "notify": "statusChanged",
+                    "read": "status",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "Status",
+                    "user": false,
+                    "write": "setStatus"
+                }
+            ],
+            "qualifiedClassName": "Network",
+            "signals": [
+                {
+                    "access": "public",
+                    "name": "statusChanged",
+                    "returnType": "void"
+                }
+            ],
+            "superClasses": [
+                {
+                    "access": "public",
+                    "name": "QObject"
+                }
+            ]
+        },
+        {
+            "className": "System",
+            "enums": [
+                {
+                    "isClass": false,
+                    "isFlag": false,
+                    "name": "Status",
+                    "values": [
+                        "Ok",
+                        "Failure"
+                    ]
+                }
+            ],
+            "methods": [
+                {
+                    "access": "public",
+                    "name": "statusString",
+                    "returnType": "QString"
+                },
+                {
+                    "access": "public",
+                    "name": "statusColor",
+                    "returnType": "QColor"
+                }
+            ],
+            "object": true,
+            "properties": [
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 0,
+                    "name": "status",
+                    "notify": "statusChanged",
+                    "read": "status",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "Status",
+                    "user": false,
+                    "write": "setStatus"
+                }
+            ],
+            "qualifiedClassName": "System",
+            "signals": [
+                {
+                    "access": "public",
+                    "name": "statusChanged",
+                    "returnType": "void"
+                }
+            ],
+            "superClasses": [
+                {
+                    "access": "public",
+                    "name": "QObject"
+                }
+            ]
+        },
+        {
+            "className": "Mode",
+            "enums": [
+                {
+                    "isClass": false,
+                    "isFlag": false,
+                    "name": "State",
+                    "values": [
+                        "Work",
+                        "Emergency",
+                        "Test",
+                        "TimedTest"
+                    ]
+                }
+            ],
+            "methods": [
+                {
+                    "access": "public",
+                    "name": "stateString",
+                    "returnType": "QString"
+                },
+                {
+                    "access": "public",
+                    "name": "stateColor",
+                    "returnType": "QColor"
+                }
+            ],
+            "object": true,
+            "properties": [
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 0,
+                    "name": "state",
+                    "notify": "stateChanged",
+                    "read": "state",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "State",
+                    "user": false,
+                    "write": "setState"
+                }
+            ],
+            "qualifiedClassName": "Mode",
+            "signals": [
+                {
+                    "access": "public",
+                    "name": "stateChanged",
+                    "returnType": "void"
+                }
+            ],
+            "superClasses": [
+                {
+                    "access": "public",
+                    "name": "QObject"
+                }
+            ]
+        }
+    ],
+    "inputFile": "systemObjects.h",
+    "outputRevision": 68
+}
